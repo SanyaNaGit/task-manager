@@ -9,20 +9,23 @@ class Task:
 
 
 class TaskManager:
-    def __init__(self):
-        self.file = 'tasks.json'
+    def __init__(self, file):
+        self.file = file
         self.tasks = self.load_tasks()
 
     def load_tasks(self):
         """Load a task list"""
-        with open(self.file, 'r') as file:
-            tasks = json.load(file)
-            return tasks
+        try:
+            with open(self.file, 'r') as f:
+                tasks = json.load(f)
+                return tasks
+        except (FileNotFoundError, json.JSONDecodeError):
+            return []
 
     def save_tasks(self):
         """Save task list"""
-        with open(self.file, 'w') as file:
-            json.dump(self.tasks, file, indent=4)
+        with open(self.file, 'w') as f:
+            json.dump(self.tasks, f, indent=4)
 
     def create_task(self, title, content, priority):
         """Create a new task."""

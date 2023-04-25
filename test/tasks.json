@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Buy groceries",
+        "content": "Milk, eggs, bread",
+        "priority": "High"
+    },
+    {
+        "title": "Clean house",
+        "content": "Vacuum, dust, mop",
+        "priority": "Medium"
+    },
+    {
+        "title": "Do laundry",
+        "content": "Wash, dry, fold",
+        "priority": "Low"
+    }
+]
